@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Documentation de notre jeu web",
   description: "Un jeu qui joue",
+  base: "/appweb-trpr02-doc/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
