@@ -1,85 +1,33 @@
-# Markdown Extension Examples
+# Revue de code de Samuel
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+### Par Dominic
 
-## Syntax Highlighting
+## Semaine du 6 avril
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+**_Points positifs :_**
 
-**Input**
+- Utilisation propre des interfaces TypeScript (Character, Ship, Ranking)
+- Code cohérent et réutilisable pour les appels fetch
+- Respect des types et usage de Ref de Vue 3
 
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
+**_Points à améliorer_**
 
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-## Custom Containers
-
-**Input**
+- Sam utilises les constructeurs de type (String, Number) au lieu des types primitifs (string et number) (sans les majuscules)
+- Les types pourraient être refactor pour utiliser les types primitifs
+- Pour éviter de répéter l’URL dans chaque fonction, on pourrait créer une instance Axios configurée :
 
 ```md
-::: info
-This is an info box.
-:::
+<script setup>
+//Utiliser ceci pour éviter la duplication de l'url
+const api = axios.create({
+  baseURL: `http://${url}:${port}`,
+})
 
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
+//Utiliser ceci dans les url des méthodes async
+const result = await api.get('/characters')
+</script>
 ```
 
-**Output**
+**_Gestion des erreurs_**
 
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+- Il n'y à pas de try catch, ce qui pourrait causé des problèmes si la ressource n'est pas disponible. Ce serait pertinent d'en rajouter.
