@@ -1,11 +1,11 @@
-# Revue du code de Dominic
+# Revue du code de Dominic  
 
 ### Par Samuel
 
-## Semaine du 6 avril
+  ## Semaine du 6 avril
 
-## Les composants
-### StartMenuForm.vue
+  ## Les composants
+  ### StartMenuForm.vue
 
 **_Points positifs :_**
 
@@ -48,8 +48,8 @@
 
 ## Semaine du 13 avril
 
-## Branche R6-info-player  
-## Les composants
+  ## Branche R6-info-player  
+  ## Les composants
 
 ### CharactersStats.vue
 - Vue qui sert à afficher les statistiques du joueur.
@@ -102,10 +102,9 @@ import type { Character } from "../scripts/types"
 //...
 </script>
 ```
-### MissionProgress.vue
-- Rien à dire.
-
-## Les vues
+  ### MissionProgress.vue
+  - Rien à dire.
+  ## Les vues
 
 ### CharacterCreationView.vue
 - Vue qui gère la création du Character et commence la partie.
@@ -136,8 +135,8 @@ import type { Character } from "../scripts/types"
 **_Point à améliorer_**
 - La lisibilité du code aurait pu être meilleure pour les fonctions de la section script.
 
-## Branche R9-R10-combat-action
-## Les composants
+  ## Branche R9-R10-combat-action
+  ## Les composants
 
 ### CombatAction.vue
 - Vue qui se charge de faire le combat.
@@ -162,8 +161,8 @@ import type { Character } from "../scripts/types"
   const hitChanceMaster = 0.7
 </script>  
 ```
-## Branche RU12
-## Les composants
+  ## Branche RU12
+  ## Les composants
 
 ### ModalComponent.vue
 - Composant pour un modal universel.
