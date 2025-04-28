@@ -196,6 +196,58 @@ import type { Character } from "../scripts/types"
   </div>  
 </template>
 ```
+## Semaine du 21 avril
+  ## Les composants
+  
+  ### ModalComponent.vue (mise à jour)
+
+**_Points positifs :_**
+
+- Le code a été grandement améliorer et est très simple
+
+**_Point à améliorer_**
+- Rien à dire.
+
+### CharactersStats.vue (mise à jour)
+
+**_Point à améliorer_**
+
+- Utilisation d'un enum qui retourne un chiffre pour ensuite faire un switch case pour retourner un string. L'enum aurait juste pu retourner un string.
+
+## Les vues
+### CharacterCreationView.vue (mise à jour)
+
+**_Points améliorer_**
+- Le `ref<Array<any>>([])` utilise maintenant l'interface `Character` renomé à `DisplayCharacter` dans ce contexte
+#### Avant
+```md
+<script setup lang="ts">
+  const randomEnemies = ref<Array<any>>([]) //ici
+</script>
+```
+#### Après
+```md
+<script setup lang="ts">
+  const randomEnemies = ref<Array<DisplayCharacter>>([]) //ici
+</script>
+```
+## Tests
+
+### CombatAction.test.ts
+**_Points positifs :_**
+- Les noms sont siignificatifs et c'est facile de comprendre ce qui doit se passer.
+- Utilisation de mocks pour controller des valeurs de retour qui ne sont pas à tester.
+
+**_Point à améliorer_**
+- On aurait pu utiliser des constantes dans les `toContain("valeur")` pour permettre aux personnes de mieu comprendre les valeurs de retour.
+
+### GameView.test.ts
+**_Points à améliorer_**
+- Les stubs dans le `mount` n'est pas nécessaire à l'exécution des tests.
+
+
+
+
 
 
 
